@@ -1,0 +1,12 @@
+*.o
+*~
+arping
+clockdiff
+ping
+ping6
+rarpd
+rdisc
+tftpd
+tracepath
+tracepath6
+traceroute6
