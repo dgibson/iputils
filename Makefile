@@ -3,14 +3,20 @@
 #
 
 # CC
-CC=gcc
+#指定CC程序
 # Path to parent kernel include files directory
+#包括文件目录的父内核
 LIBC_INCLUDE=/usr/include
 # Libraries
+#指定库
 ADDLIB=
 # Linker flags
+#Wl选项告诉编译器将后面的参数传递给链接器
+#-Wl,-Bstatic告诉链接器使用-Bstatic选项，该选项是告诉链接器，对接下来的-l选项使用静态链接
+#-Wl,-Bdynamic就是告诉链接器对接下来的-l选项使用动态链接
 LDFLAG_STATIC=-Wl,-Bstatic
 LDFLAG_DYNAMIC=-Wl,-Bdynamic
+#指定加载库
 LDFLAG_CAP=-lcap
 LDFLAG_GNUTLS=-lgnutls-openssl
 LDFLAG_CRYPTO=-lcrypto
@@ -20,23 +26,32 @@ LDFLAG_SYSFS=-lsysfs
 
 #
 # Options
+#选项
 #
 
+#定义变量，设置开关
 # Capability support (with libcap) [yes|static|no]
+#功能支持
 USE_CAP=yes
 # sysfs support (with libsysfs - deprecated) [no|yes|static]
+#sysfs支持
 USE_SYSFS=no
 # IDN support (experimental) [no|yes|static]
+#IDN支持
 USE_IDN=no
 
 # Do not use getifaddrs [no|yes|static]
+#不使用getifaddrs
 WITHOUT_IFADDRS=no
 # arping default device (e.g. eth0) []
+#arping的默认设备
 ARPING_DEFAULT_DEVICE=
 
 # GNU TLS library for ping6 [yes|no|static]
+#ping6的GNU TLS库
 USE_GNUTLS=yes
 # Crypto library for ping6 [shared|static]
+
 USE_CRYPTO=shared
 # Resolv library for ping6 [yes|static]
 USE_RESOLV=yes
